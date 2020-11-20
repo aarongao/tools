@@ -98,23 +98,30 @@ func GetRandomString(l int) string {
 	return string(result)
 }
 
-type ResponseSeccess struct {
-	Code    int         `json:"code"`
-	Data    interface{} `json:"data"`
+type Result struct {
+	ErrCode int
+	ErrMsg  string
+	Data    interface{}
 }
 
-type ResponsePage struct {
-	Code    int         `json:"code"`
-	Message string      `json:"message"`
-	Count   int64       `json:"count"`
-	Data    interface{} `json:"data"`
+type ResponseSeccess struct {
+	ErrCode int         `json:"errcode"`
+	Result  interface{} `json:"result"`
+}
+
+type Page struct {
+	ErrCode    int64       `json:"errcode"`
+	Total      int64       `json:"total"`      //总条数
+	CurrPage   int64       `json:"currpage"`   //当前页数
+	TotalPages int64       `json:"totalpages"` //总页数
+	Limit      int64       `json:"limit"`      //每页条数
+	Result     interface{} `json:"result"`
 }
 
 type ResponseError struct {
-	Code    int    `json:"code"`
-	Message string `json:"message"`
+	ErrCode int    `json:"errcode"`
+	ErrMsg  string `json:"errmsg"`
 }
-
 
 func PrintStruct(i interface{}) {
 	var kv = make(map[string]interface{})
