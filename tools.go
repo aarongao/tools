@@ -42,9 +42,6 @@ func CheckError(err error) {
 	}
 }
 
-func CheckDBRemoveError(err error) {
-
-}
 func GET(url string) (int, string, error) {
 
 	targetReq, err := http.NewRequest("GET", url, nil)
