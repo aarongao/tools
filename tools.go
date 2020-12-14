@@ -42,6 +42,9 @@ func CheckError(err error) {
 	}
 }
 
+func CheckDBRemoveError(err error) {
+
+}
 func GET(url string) (int, string, error) {
 
 	targetReq, err := http.NewRequest("GET", url, nil)
@@ -152,7 +155,7 @@ func PrintBody(req *http.Request) {
 
 // 内网地址
 func GetNetworkIP() (string, error) {
-	addrs, err := net.InterfaceAddrs();
+	addrs, err := net.InterfaceAddrs()
 	if err != nil {
 		return "", err
 	}
