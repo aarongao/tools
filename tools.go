@@ -99,18 +99,18 @@ func GetRandomString(l int) string {
 }
 
 type Result struct {
-	ErrCode int
-	ErrMsg  string
+	Code int
+	Msg  string
 	Data    interface{}
 }
 
 type ResponseSeccess struct {
-	ErrCode int         `json:"errcode"`
-	Result  interface{} `json:"result"`
+	Code   int         `json:"code"`
+	Result interface{} `json:"result"`
 }
 
 type Page struct {
-	ErrCode    int64       `json:"errcode"`
+	Code       int64       `json:"code"`
 	Total      int64       `json:"total"`      //总条数
 	CurrPage   int64       `json:"currpage"`   //当前页数
 	TotalPages int64       `json:"totalpages"` //总页数
@@ -119,8 +119,8 @@ type Page struct {
 }
 
 type ResponseError struct {
-	ErrCode int    `json:"errcode"`
-	ErrMsg  string `json:"errmsg"`
+	Code int    `json:"code"`
+	Msg  string `json:"msg"`
 }
 
 func PrintStruct(i interface{}) {
